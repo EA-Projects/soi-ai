@@ -1,0 +1,139 @@
+@import '../lib/css/bootstrap.min.scss';
+
+
+*{
+    font-family:-apple-system, sans-serif;
+}
+
+$dark-blue: #00001c;
+
+body {
+    overscroll-behavior-y: none;
+}
+
+h1{
+    color: white;
+    font-size: 45px;
+    font-weight: 200;
+    line-height: 120%;
+}
+
+h2{
+    color: white;
+    font-size: 32px;
+    font-weight: 200;
+    line-height: 120%;
+}
+
+span{
+    font-weight: 400;
+    color: #cae899;
+}
+
+section{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+main{
+    position: relative;
+    height: 900vh;
+}
+
+#zero{
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    // border: 3px solid blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .intro-area{
+        background-color: $dark-blue;
+        width: 90vw;
+        height: 90vh;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+#first{
+    width: 100vw;
+    background-color: $dark-blue;
+    position: sticky;
+    top: 0;
+    // border: 3px solid blue;
+    .quotes-area{
+        height: 100vh;
+        width: 100%;
+        .quotes{
+            width: 100%;
+            max-width: 900px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    }
+}
+
+#second{
+    height: 100vh;
+    // background-color: black;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border: 3px solid yellow;
+    .video-area{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $dark-blue;
+        video{
+            mix-blend-mode: screen;
+        }
+    }
+}
+
+#close{
+    height: 100vh;
+    padding: 150px 0 100px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .top-area{
+        text-align: center;
+        margin-bottom: 80px;
+        img{
+            margin-bottom: 15px;
+        }
+        h1{
+            color: $dark-blue;
+        }
+    }
+    .upper-title{
+        display: block;
+        color: $dark-blue;
+        font-size: 11px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    .row-logos{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 25px;
+    }
+}
+

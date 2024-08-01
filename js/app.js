@@ -1,4 +1,4 @@
- $(window).ready(function(){
+document.addEventListener('DOMContentLoaded', function() {
 
     // SPLIT HOVER
     let quoteText = $('[data-quote="words"]');
@@ -6,8 +6,8 @@
 
     const video = document.getElementById('video');
 
-    // Asegurarse de que el video esté cargado
-      video.addEventListener('loadedmetadata', function() {
+      // Asegurarse de que el video esté cargado
+      // video.addEventListener('loadedmetadata', function() {
          let heroAnimation = gsap.timeline({
             scrollTrigger: {
                trigger: 'main',
@@ -110,6 +110,6 @@
             borderRadius: '0 0 30px 30px',
             duration: .5,
          }, '<');
-      });
+      // });
     console.log("Window is ready");
  })

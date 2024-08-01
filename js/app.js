@@ -46,12 +46,23 @@ document.addEventListener('DOMContentLoaded', function() {
             stagger: 0.030,
             duration: 0.60,
          })
+         .from("#first .quotes.is-first .data-quote *", {
+            y: 5,
+            opacity: 0,
+            stagger: 0.3,
+            duration: 0.6,
+         }, '=-.5')
+         .to("#first .quotes.is-first .data-quote *", {
+            opacity: 0,
+            stagger: 0.3,
+            duration: 0.6,
+         })
          .to("#first .quotes.is-first .char", {
             filter: 'blur(10px)',
             opacity: 0,
             stagger: 0.010,
             duration: 0.30,
-         })
+         }, '<')
          // Second quote
          .from("#first .quotes.is-second .char", {
             filter: 'blur(10px)',
@@ -59,12 +70,23 @@ document.addEventListener('DOMContentLoaded', function() {
             stagger: 0.030,
             duration: 0.60,
          }, '=-.1')
+         .from("#first .quotes.is-second .data-quote *", {
+            y: 5,
+            opacity: 0,
+            stagger: 0.3,
+            duration: 0.6,
+         }, '=-.5')
+         .to("#first .quotes.is-second .data-quote *", {
+            opacity: 0,
+            stagger: 0.3,
+            duration: 0.6,
+         })
          .to("#first .quotes.is-second .char", {
             filter: 'blur(10px)',
             opacity: 0,
             stagger: 0.010,
             duration: 0.30,
-         })
+         }, '<')
          // Third quote
          .from("#first .quotes.is-third .char", {
             filter: 'blur(10px)',
@@ -72,12 +94,23 @@ document.addEventListener('DOMContentLoaded', function() {
             stagger: 0.030,
             duration: 0.60,
          }, '=-.1')
+         .from("#first .quotes.is-third .data-quote *", {
+            y: 5,
+            opacity: 0,
+            stagger: 0.3,
+            duration: 0.6,
+         }, '=-.5')
+         .to("#first .quotes.is-third .data-quote *", {
+            opacity: 0,
+            stagger: 0.3,
+            duration: 0.6,
+         })
          .to("#first .quotes.is-third .char", {
             filter: 'blur(10px)',
             opacity: 0,
             stagger: 0.010,
             duration: 0.30,
-         })
+         }, '<')
          // Show Video section
          .from("#second", {
             opacity: 0,

@@ -12,14 +12,14 @@ body {
 }
 
 h1{
-    color: white;
+    color: $dark-blue;
     font-size: 45px;
     font-weight: 200;
     line-height: 120%;
 }
 
 h2{
-    color: white;
+    color: $dark-blue;
     font-size: 32px;
     font-weight: 200;
     line-height: 120%;
@@ -28,6 +28,12 @@ h2{
 span{
     font-weight: 400;
     color: #cae899;
+}
+
+p{
+    font-weight: 200;
+    color: #FFFFFF;
+    opacity: .7;
 }
 
 section{
@@ -49,8 +55,9 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: $dark-blue;
     .intro-area{
-        background-color: $dark-blue;
+        background-color: #FFFFFF;
         width: 90vw;
         height: 90vh;
         border-radius: 30px;
@@ -62,7 +69,7 @@ main{
 
 #first{
     width: 100vw;
-    background-color: $dark-blue;
+    background-color: #FFFFFF;
     position: sticky;
     top: 0;
     // border: 3px solid blue;
@@ -83,7 +90,7 @@ main{
 
 #second{
     height: 100vh;
-    // background-color: black;
+    background-color: $dark-blue;
     position: sticky;
     top: 0;
     display: flex;
@@ -96,9 +103,9 @@ main{
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: $dark-blue;
+        background-color: #FFFFFF;
         video{
-            mix-blend-mode: screen;
+            // mix-blend-mode: screen;
         }
     }
 }
@@ -106,7 +113,7 @@ main{
 #close{
     height: 100vh;
     padding: 150px 0 100px;
-    background-color: white;
+    background-color: $dark-blue;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,23 +124,29 @@ main{
             margin-bottom: 15px;
         }
         h1{
-            color: $dark-blue;
+            color: #FFFFFF;
         }
     }
     .upper-title{
         display: block;
-        color: $dark-blue;
+        color: #FFFFFF;
         font-size: 11px;
         text-align: center;
         text-transform: uppercase;
         font-weight: 600;
+        letter-spacing: 0.1em;
     }
     .row-logos{
+        max-width: 700px;
+        margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 40px;
         margin-top: 25px;
+        padding: 30px 40px;
+        border-radius: 12px;
+        background-color: #FFFFFF;
     }
 }
 

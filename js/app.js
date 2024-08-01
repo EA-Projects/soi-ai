@@ -40,40 +40,40 @@ document.addEventListener('DOMContentLoaded', function() {
             display: 'none',
          }, '<')
          // First quote
-         .fromTo("#first .quotes.is-first .char", {
+         .from("#first .quotes.is-first .char", {
+            filter: 'blur(10px)',
             opacity: 0,
-         }, {
-            opacity: 1,
             stagger: 0.030,
             duration: 0.60,
          })
          .to("#first .quotes.is-first .char", {
+            filter: 'blur(10px)',
             opacity: 0,
             stagger: 0.010,
             duration: 0.30,
          })
          // Second quote
-         .fromTo("#first .quotes.is-second .char", {
+         .from("#first .quotes.is-second .char", {
+            filter: 'blur(10px)',
             opacity: 0,
-         }, {
-            opacity: 1,
             stagger: 0.030,
             duration: 0.60,
          }, '=-.1')
          .to("#first .quotes.is-second .char", {
+            filter: 'blur(10px)',
             opacity: 0,
             stagger: 0.010,
             duration: 0.30,
          })
          // Third quote
-         .fromTo("#first .quotes.is-third .char", {
+         .from("#first .quotes.is-third .char", {
+            filter: 'blur(10px)',
             opacity: 0,
-         }, {
-            opacity: 1,
             stagger: 0.030,
             duration: 0.60,
          }, '=-.1')
          .to("#first .quotes.is-third .char", {
+            filter: 'blur(10px)',
             opacity: 0,
             stagger: 0.010,
             duration: 0.30,

@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }, '<')
       // Control video on scroll
       .to(video, {
-         duration: .8,
+         duration: 1.6,
          onUpdate: function() {
             const progress = this.progress();
             const videoDuration = video.duration;
@@ -171,10 +171,10 @@ document.addEventListener('DOMContentLoaded', function() {
          }
       })
       // Exit Video section
-      .to("#video .video-area video", {
-         opacity: 0,
-         duration: .5,
-      }, '=-.3')
+      // .to("#video .video-area video", {
+      //    opacity: 0,
+      //    duration: .5,
+      // }, '=-.2')
       // Close video section
       .from("#close-video", {
          opacity: 0,

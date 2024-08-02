@@ -95,6 +95,7 @@ section{
         width: 90vw;
         height: 85vh;
         border-radius: 20px;
+        box-shadow: 0 0 60px rgba(0, 0, 0, 0.02);
         .container-intro{
             position: absolute;
             top: 50%;
@@ -107,7 +108,8 @@ section{
 
 #quotes{
     width: 100vw;
-    background-color: $dark-blue;
+    // background-color: $dark-blue;
+    background: linear-gradient(180deg, #141E33 50%, $dark-blue 100%);
     position: sticky;
     top: 0;
     display: flex;
@@ -174,7 +176,7 @@ section{
         align-items: center;
         justify-content: center;
         video{
-            mix-blend-mode: screen;
+            // mix-blend-mode: screen;
         }
     }
 }
@@ -188,6 +190,11 @@ section{
     align-items: center;
     justify-content: center;
     background-color: $dark-blue;
+    #particles-js{
+        position:absolute; 
+        width: 100%; 
+        height: 100%; 
+    }
     .intro-area{
         h3{
             letter-spacing: 0;

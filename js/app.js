@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const video = document.getElementById('video-file');
 
-      // Asegurarse de que el video esté cargado
-      // video.addEventListener('loadedmetadata', function() {
          let openSiteAnimation = gsap.timeline({
             scrollTrigger: {
                trigger: '#open-site',
@@ -49,22 +47,20 @@ document.addEventListener('DOMContentLoaded', function() {
             stagger: 0.030,
             duration: 0.60,
          })
-         .from("#quotes .quotes.is-first .data-quote *", {
+         .from("#quotes .quotes.is-first .data-quote", {
             y: 5,
             opacity: 0,
-            stagger: 0.3,
-            duration: 0.6,
-         }, '=-.5')
-         .to("#quotes .quotes.is-first .data-quote *", {
-            opacity: 0,
-            stagger: 0.3,
-            duration: 0.6,
          })
          .to("#quotes .quotes.is-first .char", {
+            delay: .5,
             filter: 'blur(10px)',
             opacity: 0,
             stagger: 0.010,
             duration: 0.30,
+         })
+         .to("#quotes .quotes.is-first .data-quote", {
+            delay: .4,
+            opacity: 0,
          }, '<')
          // Second quote
          .from("#quotes .quotes.is-second .char", {
@@ -73,22 +69,19 @@ document.addEventListener('DOMContentLoaded', function() {
             stagger: 0.030,
             duration: 0.60,
          }, '=-.1')
-         .from("#quotes .quotes.is-second .data-quote *", {
+         .from("#quotes .quotes.is-second .data-quote", {
             y: 5,
             opacity: 0,
-            stagger: 0.3,
-            duration: 0.6,
-         }, '=-.5')
-         .to("#quotes .quotes.is-second .data-quote *", {
-            opacity: 0,
-            stagger: 0.3,
-            duration: 0.6,
          })
          .to("#quotes .quotes.is-second .char", {
             filter: 'blur(10px)',
             opacity: 0,
             stagger: 0.010,
             duration: 0.30,
+         })
+         .to("#quotes .quotes.is-second .data-quote", {
+            delay: 1,
+            opacity: 0,
          }, '<')
          // Third quote
          .from("#quotes .quotes.is-third .char", {
@@ -97,22 +90,19 @@ document.addEventListener('DOMContentLoaded', function() {
             stagger: 0.030,
             duration: 0.60,
          }, '=-.1')
-         .from("#quotes .quotes.is-third .data-quote *", {
+         .from("#quotes .quotes.is-third .data-quote", {
             y: 5,
             opacity: 0,
-            stagger: 0.3,
-            duration: 0.6,
-         }, '=-.5')
-         .to("#quotes .quotes.is-third .data-quote *", {
-            opacity: 0,
-            stagger: 0.3,
-            duration: 0.6,
          })
          .to("#quotes .quotes.is-third .char", {
             filter: 'blur(10px)',
             opacity: 0,
             stagger: 0.010,
             duration: 0.30,
+         })
+         .to("#quotes .quotes.is-third .data-quote", {
+            delay: 1,
+            opacity: 0,
          }, '<')
          // Fourth quote
          .from("#quotes .quotes.is-fourth .char", {
@@ -121,32 +111,20 @@ document.addEventListener('DOMContentLoaded', function() {
             stagger: 0.030,
             duration: 0.60,
          }, '=-.1')
-         .from("#quotes .quotes.is-fourth .data-quote *", {
+         .from("#quotes .quotes.is-fourth .data-quote", {
             y: 5,
             opacity: 0,
-            stagger: 0.3,
-            duration: 0.6,
          }, '=-.5')
-         // .to("#quotes .quotes.is-fourth .data-quote *", {
-         //    opacity: 0,
-         //    stagger: 0.3,
-         //    duration: 0.6,
-         // })
-         // .to("#quotes .quotes.is-fourth .char", {
-         //    filter: 'blur(10px)',
-         //    opacity: 0,
-         //    stagger: 0.010,
-         //    duration: 0.30,
-         // }, '<')
          .to("#quotes .quotes-area", {
             width: '90%',
             borderRadius: '0 0 30px 30px',
             duration: .5,
          })
-      // });
 
 
 
+      // Asegurarse de que el video esté cargado
+      // video.addEventListener('loadedmetadata', function() {
       // CLOSE SITE ANIMATION
       let closeSiteAnimation = gsap.timeline({
          scrollTrigger: {
@@ -184,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }, '<')
       // Control video on scroll
       .to(video, {
-         duration: 5,
+         duration: 1,
          onUpdate: function() {
             const progress = this.progress();
             const videoDuration = video.duration;
@@ -208,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .to("#video", {
          display: 'none',
       }, '<')
-      .from("#close-video .intro-area .h3", {
+      .from("#close-video .intro-area h3", {
          opacity: 0,
       })
       // .to("#close-video .intro-area .char", {
@@ -217,6 +195,32 @@ document.addEventListener('DOMContentLoaded', function() {
       //    stagger: 0.010,
       //    duration: 0.30,
       // })
+      // });
+
+
+      particlesJS("particles-js", {
+         particles: {
+             number: { value: 50, density: { enable: false, value_area: 0 } },
+             color: { value: "#fff" },
+             shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 3 }, image: { src: "img/github.svg", width: 100, height: 100 } },
+             opacity: { value: .8, random: true, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
+             size: { value: 1, random: true, anim: { enable: false, speed: 1, size_min: 0, sync: false } },
+             line_linked: { enable: false, distance: 500, color: "#ffffff", opacity: 0.4, width: 2 },
+             move: { enable: true, speed: 1, direction: "bottom", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } },
+         },
+         interactivity: {
+             detect_on: "canvas",
+             events: { onhover: { enable: false, mode: "bubble" }, onclick: { enable: false, mode: "repulse" }, resize: true },
+             modes: {
+                 grab: { distance: 0, line_linked: { opacity: 0.5 } },
+                 bubble: { distance: 400, size: 4, duration: 0.3, opacity: 1, speed: 3 },
+                 repulse: { distance: 200, duration: 0.4 },
+                 push: { particles_nb: 4 },
+                 remove: { particles_nb: 2 },
+             },
+         },
+         retina_detect: true,
+     });
 
     console.log("Window is ready");
  })

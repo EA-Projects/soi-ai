@@ -123,8 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-      // Asegurarse de que el video esté cargado
-      // video.addEventListener('loadedmetadata', function() {
       // CLOSE SITE ANIMATION
       let closeSiteAnimation = gsap.timeline({
          scrollTrigger: {
@@ -132,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
             start: '0% 0%',
             end: '100% 85%',
             scrub: .5,
-            markers: true,
+            // markers: true,
          }
       });
 
@@ -162,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }, '<')
       // Control video on scroll
       .to(video, {
-         duration: 1,
+         duration: .8,
          onUpdate: function() {
             const progress = this.progress();
             const videoDuration = video.duration;
@@ -176,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .to("#video .video-area video", {
          opacity: 0,
          duration: .5,
-      }, '=-.2')
+      }, '=-.3')
       // Close video section
       .from("#close-video", {
          opacity: 0,
@@ -188,14 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }, '<')
       .from("#close-video .intro-area h3", {
          opacity: 0,
-      })
-      // .to("#close-video .intro-area .char", {
-      //    filter: 'blur(10px)',
-      //    opacity: 0,
-      //    stagger: 0.010,
-      //    duration: 0.30,
-      // })
-      // });
+      }, '<')
 
 
       particlesJS("particles-js", {
@@ -206,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
              opacity: { value: .8, random: true, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
              size: { value: 1, random: true, anim: { enable: false, speed: 1, size_min: 0, sync: false } },
              line_linked: { enable: false, distance: 500, color: "#ffffff", opacity: 0.4, width: 2 },
-             move: { enable: true, speed: 1, direction: "bottom", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } },
+             move: { enable: true, speed: 1, direction: "center", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } },
          },
          interactivity: {
              detect_on: "canvas",

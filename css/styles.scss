@@ -15,7 +15,7 @@ $grey-light: #A4B1B6;
 
 
 body {
-    overscroll-behavior-y: none;
+    overscroll-behavior: none;
 }
 
 h1{
@@ -62,6 +62,61 @@ p{
     font-weight: 200;
     color: $white;
     opacity: .7;
+}
+
+a, a:hover{
+    text-decoration: none;
+}
+
+.button{
+    padding: 10px 20px;
+    color: $white;
+    border: 1px solid $white;
+    border-radius: 4px;
+    background: linear-gradient(-90deg, rgb(0, 163, 255, .40) 0%, #00A3FF00 100%);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 0 5px rgba(0, 163, 255, 0.3), 1px 0 4px rgba(0, 163, 255, 0.7);
+    transition: all .5s ease-in-out;
+    &::before{
+        content: "";
+        background-color: rgba(255, 255, 255, 0.1);
+        position: absolute;
+        inset: 0;
+        border-radius: 2px;
+        z-index: -1;
+        transition: all .5s ease-in-out;
+    }
+    &::after{
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-left: 15px;
+        background-image: url(../assets/arrow-btn.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transition: all .5s ease-in-out;
+    }
+    &:hover{
+        color: $white;
+        color: $dark-blue;
+        box-shadow: 0 0 5px rgba(0, 163, 255, 0.4), 2px 0 25px rgba(0, 163, 255, 0.5);
+        &::before{
+            background-color: rgba(255, 255, 255, 1);
+        }
+        &::after{
+            filter: invert(1);
+        }
+        img{
+            &.reflect-button{
+                opacity: 0;
+            }
+            &.is-hover{
+                opacity: 1;
+            }
+        }
+    }   
 }
 
 section{
@@ -172,15 +227,18 @@ section{
     .video-area{
         height: 100%;
         width: 100%;
+        max-width: 80vw;
+        max-height: 80vh;
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
         video{
-            position: absolute;
             width: 100%;
             height: 100%;
-            object-fit: cover;
             mix-blend-mode: screen;
+            // position: absolute;
+            // object-fit: cover;
         }
     }
 }
@@ -194,10 +252,16 @@ section{
     align-items: center;
     justify-content: center;
     background-color: $dark-blue;
+    .static-stars{
+        position:absolute; 
+        width: 100%; 
+        height: 100%; 
+    }
     #particles-js{
         position:absolute; 
         width: 100%; 
         height: 100%; 
+        z-index: 1;
     }
     .intro-area{
         h3{
@@ -220,41 +284,112 @@ section{
 
 
 #close{
-    height: 100vh;
-    padding: 150px 0 100px;
+    height: auto;
+    padding: 100px 0 40px;
     background-color: $dark-blue;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url(../assets/close-bg.jpg);
+    background-position: center -100px;
+    background-size: 1440px;
+    background-repeat: no-repeat;
+    position: relative;
+    .overlay-section{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        inset: 0;
+        background: linear-gradient(180deg, $dark-blue 100%, transparent 100%);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1;
+    }
     .top-area{
         text-align: center;
-        margin-bottom: 80px;
+        margin-bottom: 60px;
         img{
+            max-width: 288px;
             margin-bottom: 15px;
         }
-        h1{
-            color: $white;
-        }
     }
-    .upper-title{
+    span.uppertitle{
         display: block;
-        color: $white;
-        font-size: 11px;
+        color: $grey-light;
+        font-weight: 400;
         text-align: center;
-        text-transform: uppercase;
-        font-weight: 600;
-        letter-spacing: 0.1em;
     }
     .row-logos{
-        max-width: 700px;
-        margin: 0 auto;
         display: flex;
         align-items: center;
-        justify-content: space-around;
-        gap: 40px;
-        margin-top: 25px;
-        padding: 30px 40px;
-        border-radius: 12px;
-        background-color: $white;
+        justify-content: center;
+        gap: 45px;
+        margin-top: 15px;
+        .holder-logo{
+            img{
+                &.baseline{
+                    max-width: 79px;
+                }
+                &.boston-seed{
+                    max-width: 148px;
+                }
+                &.founder{
+                    max-width: 73px;
+                }
+                &.impellent{
+                    max-width: 85px;
+                }
+                &.predictive{
+                    max-width: 115px;
+                }
+                &.ventures186{
+                    max-width: 45px;
+                }
+            }
+        }
+    }
+    .button-area{
+        margin-top: 150px;
+        text-align: center;
+        .button-reflect{
+            display: inline-block;
+            position: relative;
+            img{
+                pointer-events: none;
+                transition: all .5s ease-in-out;
+                &.reflect-button{
+                    max-width: 195px;
+                    position: absolute;
+                    left: 50%;
+                    top: 40px;
+                    transform: translateX(-50%);
+                }
+                &.is-hover{
+                    opacity: 0;
+                }
+            }
+            &:hover{
+                img{
+                    &.reflect-button{
+                        opacity: 0;
+                    }
+                    &.is-hover{
+                        opacity: .8;
+                    }
+                }
+            } 
+        }
+    }
+    .bottom-area{
+        margin-top: 150px;
+        text-align: center;
+        span.uppertitle{
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: $grey-light;
+            font-weight: 400;
+            opacity: 66%;
+        }
     }
 }

@@ -167,6 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (!isNaN(videoDuration)) {
                video.currentTime = progress * videoDuration;
+               console.log(`Progress: ${progress}, Current Time: ${video.currentTime}`);
             }
          }
       })
@@ -185,9 +186,28 @@ document.addEventListener('DOMContentLoaded', function() {
          display: 'none',
       }, '<')
       .from("#close-video .intro-area h3", {
+         duration: 2,
          opacity: 0,
       }, '<')
 
+      // CTA SITE ANIMATION
+      let ctaSiteAnimation = gsap.timeline({
+         scrollTrigger: {
+            trigger: '#close',
+            start: '-20% 50%',
+            end: '50% 50%',
+            scrub: .5,
+            // markers: true,
+         }
+      });
+
+      ctaSiteAnimation
+      // Pre video
+      .from("#close .overlay-section", {
+         filter: 'blur(10px)',
+         opacity: 1, 
+         background: 'linear-gradient(180deg, $dark-blue 0%, transparent 100%)',
+      })
 
       particlesJS("particles-js", {
          particles: {

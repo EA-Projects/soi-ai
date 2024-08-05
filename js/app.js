@@ -6,120 +6,120 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const video = document.getElementById('video-file');
 
-         let openSiteAnimation = gsap.timeline({
-            scrollTrigger: {
-               trigger: '#open-site',
-               start: '0% 0%',
-               end: '100% 85%',
-               scrub: .5,
-               // markers: true,
-            }
-         });
+      let openSiteAnimation = gsap.timeline({
+         scrollTrigger: {
+            trigger: '#open-site',
+            start: '0% 0%',
+            end: '100% 85%',
+            scrub: .5,
+            // markers: true,
+         }
+      });
 
-         openSiteAnimation
-         //Intro page
-         .to("#open .intro-area", {
-            width: '100vw',
-            height: '100vh',
-            borderRadius: '0',
-            duration: .5,
-         })
-         .to("#open .intro-area .char", {
-            filter: 'blur(10px)',
-            opacity: 0,
-            stagger: 0.010,
-            duration: 0.30,
-         }, '<')
-         // Show quotes section
-         .from("#quotes", {
-            opacity: 0,
-            display: 'none',
-            duration: .5,
-         }, '<')
-         // Hidde Intro section
-         .to("#open", {
-            display: 'none',
-         }, '<')
-         // First quote
-         .from("#quotes .quotes.is-first .char", {
-            filter: 'blur(10px)',
-            opacity: 0,
-            stagger: 0.030,
-            duration: 0.60,
-         })
-         .from("#quotes .quotes.is-first .data-quote", {
-            y: 5,
-            opacity: 0,
-         })
-         .to("#quotes .quotes.is-first .char", {
-            delay: .5,
-            filter: 'blur(10px)',
-            opacity: 0,
-            stagger: 0.010,
-            duration: 0.30,
-         })
-         .to("#quotes .quotes.is-first .data-quote", {
-            delay: .4,
-            opacity: 0,
-         }, '<')
-         // Second quote
-         .from("#quotes .quotes.is-second .char", {
-            filter: 'blur(10px)',
-            opacity: 0,
-            stagger: 0.030,
-            duration: 0.60,
-         }, '=-.1')
-         .from("#quotes .quotes.is-second .data-quote", {
-            y: 5,
-            opacity: 0,
-         })
-         .to("#quotes .quotes.is-second .char", {
-            filter: 'blur(10px)',
-            opacity: 0,
-            stagger: 0.010,
-            duration: 0.30,
-         })
-         .to("#quotes .quotes.is-second .data-quote", {
-            delay: 1,
-            opacity: 0,
-         }, '<')
-         // Third quote
-         .from("#quotes .quotes.is-third .char", {
-            filter: 'blur(10px)',
-            opacity: 0,
-            stagger: 0.030,
-            duration: 0.60,
-         }, '=-.1')
-         .from("#quotes .quotes.is-third .data-quote", {
-            y: 5,
-            opacity: 0,
-         })
-         .to("#quotes .quotes.is-third .char", {
-            filter: 'blur(10px)',
-            opacity: 0,
-            stagger: 0.010,
-            duration: 0.30,
-         })
-         .to("#quotes .quotes.is-third .data-quote", {
-            delay: 1,
-            opacity: 0,
-         }, '<')
-         // Fourth quote
-         .from("#quotes .quotes.is-fourth .char", {
-            filter: 'blur(10px)',
-            opacity: 0,
-            stagger: 0.030,
-            duration: 0.60,
-         }, '=-.1')
-         .from("#quotes .quotes.is-fourth .data-quote", {
-            y: 5,
-            opacity: 0,
-         }, '=-.5')
-         .to("#quotes .quotes-area", {
-            width: '90%',
-            borderRadius: '0 0 30px 30px',
-            duration: .5,
-         })
+      openSiteAnimation
+      //Intro page
+      .to("#open .intro-area", {
+         width: '100vw',
+         height: '100vh',
+         borderRadius: '0',
+         duration: .5,
+      })
+      .to("#open .intro-area .char", {
+         filter: 'blur(10px)',
+         opacity: 0,
+         stagger: 0.010,
+         duration: 0.30,
+      }, '<')
+      // Show quotes section
+      .from("#quotes", {
+         opacity: 0,
+         display: 'none',
+         duration: .5,
+      }, '<')
+      // Hidde Intro section
+      .to("#open", {
+         display: 'none',
+      }, '<')
+      // First quote
+      .from("#quotes .quotes.is-first .char", {
+         filter: 'blur(10px)',
+         opacity: 0,
+         stagger: 0.030,
+         duration: 0.60,
+      })
+      .from("#quotes .quotes.is-first .data-quote", {
+         y: 5,
+         opacity: 0,
+      })
+      .to("#quotes .quotes.is-first .char", {
+         delay: .5,
+         filter: 'blur(10px)',
+         opacity: 0,
+         stagger: 0.010,
+         duration: 0.30,
+      })
+      .to("#quotes .quotes.is-first .data-quote", {
+         delay: .4,
+         opacity: 0,
+      }, '<')
+      // Second quote
+      .from("#quotes .quotes.is-second .char", {
+         filter: 'blur(10px)',
+         opacity: 0,
+         stagger: 0.030,
+         duration: 0.60,
+      }, '=-.1')
+      .from("#quotes .quotes.is-second .data-quote", {
+         y: 5,
+         opacity: 0,
+      })
+      .to("#quotes .quotes.is-second .char", {
+         filter: 'blur(10px)',
+         opacity: 0,
+         stagger: 0.010,
+         duration: 0.30,
+      })
+      .to("#quotes .quotes.is-second .data-quote", {
+         delay: 1,
+         opacity: 0,
+      }, '<')
+      // Third quote
+      .from("#quotes .quotes.is-third .char", {
+         filter: 'blur(10px)',
+         opacity: 0,
+         stagger: 0.030,
+         duration: 0.60,
+      }, '=-.1')
+      .from("#quotes .quotes.is-third .data-quote", {
+         y: 5,
+         opacity: 0,
+      })
+      .to("#quotes .quotes.is-third .char", {
+         filter: 'blur(10px)',
+         opacity: 0,
+         stagger: 0.010,
+         duration: 0.30,
+      })
+      .to("#quotes .quotes.is-third .data-quote", {
+         delay: 1,
+         opacity: 0,
+      }, '<')
+      // Fourth quote
+      .from("#quotes .quotes.is-fourth .char", {
+         filter: 'blur(10px)',
+         opacity: 0,
+         stagger: 0.030,
+         duration: 0.60,
+      }, '=-.1')
+      .from("#quotes .quotes.is-fourth .data-quote", {
+         y: 5,
+         opacity: 0,
+      }, '=-.5')
+      .to("#quotes .quotes-area", {
+         width: '90%',
+         borderRadius: '0 0 30px 30px',
+         duration: .5,
+      })
 
 
 
@@ -171,11 +171,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
          }
       })
-      // Exit Video section
-      // .to("#video .video-area video", {
-      //    opacity: 0,
-      //    duration: .5,
-      // }, '=-.2')
       // Close video section
       .from("#close-video", {
          opacity: 0,
@@ -194,8 +189,8 @@ document.addEventListener('DOMContentLoaded', function() {
       let ctaSiteAnimation = gsap.timeline({
          scrollTrigger: {
             trigger: '#close',
-            start: '-20% 50%',
-            end: '50% 50%',
+            start: '0% 50%',
+            end: '40% 50%',
             scrub: .5,
             // markers: true,
          }

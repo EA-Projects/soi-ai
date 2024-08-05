@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
       openSiteAnimation
       //Intro page
       .to("#open .intro-area", {
-         width: '100vw',
+         width: '100%',
          height: '100vh',
          borderRadius: '0',
          duration: .5,
@@ -122,7 +122,6 @@ document.addEventListener('DOMContentLoaded', function() {
       })
 
 
-
       // CLOSE SITE ANIMATION
       let closeSiteAnimation = gsap.timeline({
          scrollTrigger: {
@@ -186,23 +185,37 @@ document.addEventListener('DOMContentLoaded', function() {
       }, '<')
 
       // CTA SITE ANIMATION
-      let ctaSiteAnimation = gsap.timeline({
-         scrollTrigger: {
-            trigger: '#close',
-            start: '0% 50%',
-            end: '40% 50%',
-            scrub: .5,
-            // markers: true,
-         }
+      const ctaSection = document.querySelectorAll('#close .row-logos');
+      const observerCtaSection = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            ctaSiteAnimation.play();
+          }
+          // Unobserve trigger
+          if (entry.intersectionRatio > 0) {
+            observerCtaSection.unobserve(entry.target);
+          }
+        });
       });
+      ctaSection.forEach((animation) => {
+        observerCtaSection.observe(animation);
+      });
+
+
+      let ctaSiteAnimation = gsap.timeline({paused: true});
 
       ctaSiteAnimation
       // Pre video
-      .from("#close .overlay-section", {
-         filter: 'blur(10px)',
-         opacity: 1, 
-         background: 'linear-gradient(180deg, $dark-blue 0%, transparent 100%)',
+      .from("#close .close-background", {
+         delay: .5,
+         duration: 3,
+         opacity: 0, 
       })
+      .from("#close .top-area, #close span, #close .row-logos, #close .button-area, #close .bottom-area ", {
+         duration: 3,
+         opacity: 0, 
+         stagger: .5,
+      }, '-=2')
 
       particlesJS("particles-js", {
          particles: {

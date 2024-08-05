@@ -92,10 +92,13 @@ a, a:hover{
     backdrop-filter: blur(2px);
     box-shadow: 0 0 5px rgba(0, 163, 255, 0.3), 1px 0 4px rgba(0, 163, 255, 0.7);
     transition: all .5s ease-in-out;
+    position: relative;
     &::before{
         content: "";
         background-color: rgba(255, 255, 255, 0.1);
         position: absolute;
+        height: 100%;
+        width: 100%;
         inset: 0;
         border-radius: 2px;
         z-index: -1;
@@ -134,10 +137,12 @@ a, a:hover{
     }   
 }
 
-section{
-    height: 100vh;
-    width: 100vw;
-    position: relative;
+.wrapper-site{
+    section{
+        height: 100vh;
+        width: 100%;
+        position: relative;
+    }
 }
 
 // Main Containers
@@ -153,7 +158,7 @@ section{
 
 #open{
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     position: sticky;
     top: 0;
     display: flex;
@@ -162,7 +167,7 @@ section{
     background-color: $light-white;
     .intro-area{
         background-color: $white;
-        width: 90vw;
+        width: 90%;
         height: 85vh;
         border-radius: 20px;
         box-shadow: 0 0 60px rgba(0, 0, 0, 0.02);
@@ -184,7 +189,7 @@ section{
 }
 
 #quotes{
-    width: 100vw;
+    width: 100%;
     // background-color: $dark-blue;
     background: linear-gradient(180deg, #141E33 50%, $dark-blue 100%);
     position: sticky;
@@ -236,7 +241,7 @@ section{
 
 #pre-video{
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     position: sticky;
     top: 0;
     display: flex;
@@ -272,7 +277,7 @@ section{
     .video-area{
         height: 100%;
         width: 100%;
-        // max-width: 80vw;
+        // max-width: 80%;
         // max-height: 80vh;
         display: flex;
         align-items: center;
@@ -290,7 +295,7 @@ section{
 
 #close-video{
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     position: sticky;
     top: 0;
     display: flex;
@@ -322,7 +327,7 @@ section{
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
                 text-fill-color: transparent;
-                background-image: linear-gradient(-90deg, #1584FF 0%, #A01AF8 34%, #FB0F42 67%,  #FFB647 100%);
+                background-image: linear-gradient(90deg, #FFB647 0%, #FB0F42 50%,  #A01AF8 100%);
             }
         }
     }
@@ -331,32 +336,38 @@ section{
 
 #close{
     height: auto;
-    padding: 100px 0 40px;
+    padding: 200px 0 40px;
     background-color: $dark-blue;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../assets/close-bg.jpg);
-    background-position: center -100px;
-    background-size: 1440px;
-    background-repeat: no-repeat;
     position: relative;
-    .overlay-section{
+    overflow: hidden;
+    .close-background{
+        max-width: 1440px;
         position: absolute;
-        height: 100%;
-        width: 100%;
-        inset: 0;
-        background: linear-gradient(180deg, $dark-blue 100%, transparent 100%);
-        opacity: 0;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         pointer-events: none;
-        z-index: 1;
     }
     .top-area{
-        text-align: center;
-        margin-bottom: 60px;
-        img{
-            max-width: 288px;
-            margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 150px;
+        .logo-area{
+            position: relative;
+            img{
+                position: relative;
+                z-index: 1;
+            }
+            img.logo-sparks{
+                position: absolute;
+                top: -12px;
+                left: -12px;
+                z-index: 0;
+            }
         }
     }
     span.uppertitle{
@@ -370,7 +381,7 @@ section{
         align-items: center;
         justify-content: center;
         gap: 45px;
-        margin-top: 15px;
+        margin-top: 20px;
         .holder-logo{
             img{
                 &.baseline{
@@ -395,7 +406,7 @@ section{
         }
     }
     .button-area{
-        margin-top: 150px;
+        margin-top: 160px;
         text-align: center;
         .button-reflect{
             display: inline-block;
@@ -433,6 +444,7 @@ section{
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            font-size: 11px;
             color: $grey-light;
             font-weight: 400;
             opacity: 66%;
@@ -444,7 +456,6 @@ section{
         }
     }
     @media (max-width: 991px){
-        background-position: center -70px;
         .row-logos{
             gap: 15px 0;
             flex-wrap: wrap;
@@ -455,8 +466,9 @@ section{
         }
     }
     @media (max-width: 575px){
-        background-size: 800px;
-        background-position: center 75%;
+        .close-background{
+            max-width: 800px;
+        }
         .top-area{
             img{
                 max-width: 180px;
@@ -469,7 +481,10 @@ section{
         }
     }
     @media (max-width: 425px){
-        background-position: center 65%;
+        .close-background{
+            max-width: 500px;
+            top: 55%;
+        }
         .row-logos{
             .holder-logo{
                 width: 33%;

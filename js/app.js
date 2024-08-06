@@ -114,6 +114,47 @@ document.addEventListener('DOMContentLoaded', function() {
       .from("#quotes .quotes.is-fourth .data-quote", {
          y: 5,
          opacity: 0,
+      })
+      .to("#quotes .quotes.is-fourth .char", {
+         filter: 'blur(10px)',
+         opacity: 0,
+         stagger: 0.010,
+         duration: 0.30,
+      })
+      .to("#quotes .quotes.is-fourth .data-quote", {
+         opacity: 0,
+      }, '<')
+      // Fifth quote
+      .from("#quotes .quotes.is-fifth .char", {
+         filter: 'blur(10px)',
+         opacity: 0,
+         stagger: 0.030,
+         duration: 0.60,
+      }, '=-.1')
+      .from("#quotes .quotes.is-fifth .data-quote", {
+         y: 5,
+         opacity: 0,
+      })
+      .to("#quotes .quotes.is-fifth .char", {
+         filter: 'blur(10px)',
+         opacity: 0,
+         stagger: 0.010,
+         duration: 0.30,
+      })
+      .to("#quotes .quotes.is-fifth .data-quote", {
+         delay: 1,
+         opacity: 0,
+      }, '<')
+      // Sixth quote
+      .from("#quotes .quotes.is-sixth .char", {
+         filter: 'blur(10px)',
+         opacity: 0,
+         stagger: 0.030,
+         duration: 0.60,
+      }, '=-.1')
+      .from("#quotes .quotes.is-sixth .data-quote", {
+         y: 5,
+         opacity: 0,
       }, '=-.5')
       .to("#quotes .quotes-area", {
          width: '90%',

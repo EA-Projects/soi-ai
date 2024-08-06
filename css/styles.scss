@@ -153,7 +153,7 @@ a, a:hover{
 
 #close-site{
     position: relative;
-    height: 700vh;
+    height: 900vh;
 }
 
 #open{
@@ -315,19 +315,29 @@ a, a:hover{
         z-index: 1;
     }
     .intro-area{
-        h3{
-            letter-spacing: 0;
-            color: $white;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            strong{
-                display: inline;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                text-fill-color: transparent;
-                background-image: linear-gradient(90deg, #FFB647 0%, #FB0F42 50%,  #A01AF8 100%);
+        .container-intro{
+            h3{
+                position: relative;
+                letter-spacing: 0;
+                color: $white;
+                span{
+                    color: $white;
+                    position: relative;
+                    display: inline;
+                    line-height: 150%;
+                    span{
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        text-fill-color: transparent;
+                        background-image: linear-gradient(90deg, #FFB647 0%, #FB0F42 50%,  #A01AF8 100%);
+                        position: absolute;
+                        left: 7px;
+                        top: -3px;
+                        width: 100%;
+                        height: 110%;
+                    }
+                }
             }
         }
     }

@@ -180,9 +180,17 @@ document.addEventListener('DOMContentLoaded', function() {
          display: 'none',
       }, '<')
       .from("#close-video .intro-area h3", {
-         duration: 2,
+         duration: .5,
          opacity: 0,
       }, '<')
+      .from("#close-video .intro-area h3 span.holder-text span", {
+         duration: 1,
+         opacity: 0,
+      })
+      .to("#close-video .intro-area h3 span.holder-text", {
+         duration: 1,
+         color: 'transparent',
+      }, '<+.5')
 
       // CTA SITE ANIMATION
       const ctaSection = document.querySelectorAll('#close .row-logos');

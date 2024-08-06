@@ -364,9 +364,11 @@ a, a:hover{
             }
             img.logo-sparks{
                 position: absolute;
-                top: -12px;
-                left: -12px;
+                top: -55px;
+                left: -55px;
                 z-index: 0;
+                max-width: 185px;
+                mix-blend-mode: screen;
             }
         }
     }
@@ -444,7 +446,7 @@ a, a:hover{
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            font-size: 11px;
+            font-size: 9px;
             color: $grey-light;
             font-weight: 400;
             opacity: 66%;

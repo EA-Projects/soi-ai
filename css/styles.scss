@@ -230,6 +230,28 @@ a, a:hover{
         .quotes-area{
             .quotes{
                 max-width: 380px;
+                .data-quote{
+                    img{
+                        &.meta{
+                            max-width: 90px;
+                        }
+                        &.ny-times{
+                            max-width: 180px;
+                        }
+                        &.goldman-sachs{
+                            max-width: 85px;
+                        }
+                        &.stanford{
+                            max-width: 85px;
+                        }
+                        &.mit{
+                            max-width: 50px;
+                        }
+                        &.benchmark{
+                            max-width: 150px;
+                        }
+                    }
+                }
             }
         }
     }
